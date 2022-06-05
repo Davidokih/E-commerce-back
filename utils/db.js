@@ -8,3 +8,5 @@ mongoose.connect(url).then(() => {
 }).catch((err) => {
     console.log(err);
 });
+
+module.exports = mongoose;
