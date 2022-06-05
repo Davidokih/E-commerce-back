@@ -8,6 +8,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.status("success").json({
+        message: "It works"
+    });
+});
 app.use('/api/user', require('./router/router'));
 app.use("/api/item", require("./router/itemsRouter"));
 
