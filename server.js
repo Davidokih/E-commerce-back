@@ -1,10 +1,17 @@
-require('./utils/db');
+// require('./utils/db');
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 const port = process.env.PORT || 1111;
 
 const app = express();
-
+const url = process.env.URL;
+mongoose.connect(url).then(() => {
+    console.log('Connected to database');
+}).catch((err) => {
+    console.log(err);
+});
 app.use(cors());
 app.use(express.json());
 
